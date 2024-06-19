@@ -10,7 +10,7 @@ const snake = [
     {x: 330, y: 270},
     {x: 360, y: 270},
     {x: 390, y: 270},
-    {x: 420, y: 270},
+    {x: 420, y: 270}
   
 ]
 
@@ -136,13 +136,12 @@ food.color = randonColor()
          const head = snake[snake.length - 1]
 const canvasLimit = canvas.width - size 
 const neckIndex = snake.length - 2
-const wallColision = head.x < 0 || head.x > 570 || head.y < 0 || head.y > 570
+const wallColision = 
+head.x < 0 || head.x > canvasLimit || head.y < 0 || head.y > canvasLimit 
 
-
-const selfCollison = snake.find((position) => {
-return  index < neckIndexposition.x && position.y == head.y
+const selfCollison = snake.find((position, index) => {
+return index < neckIndex && position.x == head.x && position.y == head.y
 })
-
         if (wallColision || selfCollison) {
             alert("você perdeu!")
         }
