@@ -124,6 +124,13 @@ food.y = y
 food.color = randonColor()
 }
     }
+
+    const checkCollision = () =>{
+        const head = snake[snake.length - 1]
+        if (head.x < 0 || head.x > 570 || head.y < 0 || head.y > 570) {
+            alert("você perdeu!")
+        }
+    }
  
     const gameLoop = () => {
         clearInterval(loopId)
@@ -133,6 +140,7 @@ food.color = randonColor()
         moveSnake()
         drawSnake()
         chackEat()
+        checkCollision()
 
          loopId = setTimeout(() =>{
             gameLoop()
