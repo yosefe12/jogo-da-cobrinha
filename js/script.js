@@ -5,7 +5,14 @@ const h1 = document . querySelector("h1")
 const audio = new Audio("../assets/audio.mp3")
 const size = 30
 const snake = [
-    {x: 270, y: 270},]
+    {x: 270, y: 270},
+    {x: 300, y: 270},
+    {x: 330, y: 270},
+    {x: 360, y: 270},
+    {x: 390, y: 270},
+    {x: 420, y: 270},
+  
+]
 
     const randonNumber = (min, max) => {
         return Math.round(Math.random() * (max - min) + min)
@@ -126,8 +133,17 @@ food.color = randonColor()
     }
 
     const checkCollision = () =>{
-        const head = snake[snake.length - 1]
-        if (head.x < 0 || head.x > 570 || head.y < 0 || head.y > 570) {
+         const head = snake[snake.length - 1]
+const canvasLimit = canvas.width - size 
+const neckIndex = snake.length - 2
+const wallColision = head.x < 0 || head.x > 570 || head.y < 0 || head.y > 570
+
+
+const selfCollison = snake.find((position) => {
+return  index < neckIndexposition.x && position.y == head.y
+})
+
+        if (wallColision || selfCollison) {
             alert("você perdeu!")
         }
     }
