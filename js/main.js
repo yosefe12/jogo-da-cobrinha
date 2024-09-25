@@ -154,7 +154,7 @@ const gameOver = () => {
 }
 
 function isMobileDevice() {
-    return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 }
 
 const arrowButtons = () => {
