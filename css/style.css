@@ -7,6 +7,7 @@
 
  body {
     background-color: #500000 ;
+    position: relative;
     display: flex;
     min-height: 100vh ;
     align-items: center ;
@@ -64,4 +65,67 @@ canvas {
     justify-content: center;
     gap: 5px;
     cursor: pointer;
+}
+
+div {
+    padding: 5px;
+}
+
+.arrows-container {
+    position: absolute;
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    width: 220px;
+    z-index: 999; /* Faz a div ficar sobre os outros elementos */
+    bottom: 10px; /* Ajuste conforme desejado */
+    right: 10px; /* Ajuste conforme desejado */
+}
+
+.lines .button {
+    display: none !important;
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   box-shadow: 5px 5px 5px rgba(0,0,0,.5),
+   inset -5px -5px 5px rgba(0,0,0,.8);
+   background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-position: center; /* Centraliza a imagem horizontal e verticalmente */
+    background-size: 50px; /* Ajusta o tamanho da imagem para caber na div */
+    transition:box-shadow .05s ease-in-out ;
+    background-color: aliceblue;
+}
+
+.lines .button:active {
+    box-shadow: 2px 2px 2px rgba(0,0,0,.7),
+    inset -5px -5px 5px rgba(0,0,0,.8);
+   
+}
+
+.top, .bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sides {
+    display: flex;
+    justify-content: space-between;
+}
+
+.up {
+    background-image: url("https://cdn3.iconfinder.com/data/icons/arrows-107/512/Up_arrow-256.png");
+}
+
+.left {
+    background-image: url("https://cdn3.iconfinder.com/data/icons/arrows-107/512/left_arrow-256.png");
+}
+
+.right {
+    background-image: url("https://cdn3.iconfinder.com/data/icons/arrows-107/512/Right_arrow-256.png");
+}
+
+.down {
+    background-image: url("https://cdn3.iconfinder.com/data/icons/arrows-107/512/Down_arrow-256.png");
 }
