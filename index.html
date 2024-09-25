@@ -8,8 +8,6 @@
     <title>snake game</title>
 </head>
 <body>
-    <h1></h1>
-  
     <div class="score">score: <span class="score--value">00</span></div>
 
     <div class="menu-screen">
@@ -24,9 +22,24 @@
             Jogar novamente
         </button>
     </div>
-
+    
+   
     <canvas width="600" height="600"></canvas>
-    <script src="/js/main.js"></script>
+
+    <div class="arrows-container"></div>
+        <div class="lines top">
+            <div class="btn-move button up"></div>
+        </div>
+        <div class="lines sides">
+            <div class="btn-move button left" style="margin-right: 50px;"></div>
+            <div class="btn-move button right"></div>
+        </div>
+        <div class="lines bottom">
+            <div class="btn-move button down"></div>
+        </div>
+    </div>
+
+    <script src="./js/main.js"></script>
     
 </body>
 </html>
