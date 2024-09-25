@@ -159,7 +159,7 @@ function isMobileDevice() {
 
 const arrowButtons = () => {
     if(isMobileDevice()) {
-        const ab = document.getElementsByClassName('arrows-container');
+        const ab = Array.from(document.getElementsByClassName('btn-move'));
         ab.forEach(e => {
             e.style.display = 'block !important';
         });
