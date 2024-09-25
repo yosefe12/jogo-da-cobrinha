@@ -153,6 +153,19 @@ const gameOver = () => {
     canvas.style.filter = "blur(2px)"
 }
 
+function isMobileDevice() {
+    return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
+
+const arrowButtons = () => {
+    if(isMobileDevice()) {
+        const ab = document.getElementsByClassName('arrows-container');
+        ab.forEach(e => {
+            e.style.display = 'block !important';
+        });
+    }
+}
+
 const gameLoop = () => {
     clearInterval(loopId)
 
@@ -163,6 +176,7 @@ const gameLoop = () => {
     drawSnake()
     chackEat()
     checkCollision()
+    arrowButtons()
 
     loopId = setTimeout(() => {
         gameLoop()
@@ -188,6 +202,16 @@ document.addEventListener("keydown", ({ key }) => {
         direction = "up"
     }
 })
+
+const buttons = document.getElementsByClassName('button');
+    Array.from(buttons).forEach(element => {
+        element.addEventListener('click', () => {
+            const c = Array.from(element.classList.entries());
+            direction = c[1][1]
+                
+        });
+    });
+
 
 buttonPlay.addEventListener("click", () => {
     score.innerText = "00"
